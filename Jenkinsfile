@@ -13,7 +13,7 @@ node {
  
 echo 'Finish'
 	stage ('Docker Compose') {
-		sh "sleep 30s"
+		sh "sleep 60s"
   }}
 	
 	//Deploying/Downloading Artifacts to Artifactory and Build Promotions
