@@ -2,7 +2,7 @@ node {
 
 	//Git Checkout
 	stage ('Checkout') {
-		checkout
+		checkout scm
 	}
 
 	//Build and SonarQube Analysis
