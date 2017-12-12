@@ -8,12 +8,10 @@ node {
 
 	//Build and SonarQube Analysis
 	stage ('Build') {
-		sh '//...
-    git rev-parse --abbrev-ref HEAD > GIT_BRANCH'
+		sh '''git rev-parse --abbrev-ref HEAD > GIT_BRANCH'
     git_branch = readFile('GIT_BRANCH').trim()
     echo git_branch
-    //...
-   '
+'''
 		
 	}
 	lock('my-resource-name') {
