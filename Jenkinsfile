@@ -7,7 +7,7 @@ node {
 
 	//Build and SonarQube Analysis
 	stage ('Build') {
-		sh "${BRANCH_NAME}"
+		sh "echo ${BRANCH_NAME}"
 	}
 	
 
