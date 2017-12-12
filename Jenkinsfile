@@ -7,14 +7,13 @@ node {
 
 	//Build and SonarQube Analysis
 	stage ('Build') {
-		
+		  sh "BRANCH_NAME"
 	}
-	lock('my-resource-name') {
- 
-echo 'Finish'
+	
+
 	stage ('Docker Compose') {
 		sh "sleep 60s"
-  }}
+  }
 	
 	//Deploying/Downloading Artifacts to Artifactory and Build Promotions
 	stage ('Deploy Artifacts') {
