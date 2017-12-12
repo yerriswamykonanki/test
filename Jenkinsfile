@@ -7,7 +7,7 @@ node {
 
 	//Build and SonarQube Analysis
 	stage ('Build') {
-		  sh "env.BRANCH_NAME"
+		  sh "env.GIT_BRANCH"
 	}
 	
 
