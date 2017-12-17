@@ -8,13 +8,14 @@ node {
 
 	//Build and SonarQube Analysis
 	stage ('Build') {
+		sh 'env >Jenkins_env'
 		
 	}
 	lock('my-resource-name') {
  
 echo 'Finish'
 	stage ('Docker Compose') {
-		sh "sleep 60s"
+		
   }}
 	
 	//Deploying/Downloading Artifacts to Artifactory and Build Promotions
