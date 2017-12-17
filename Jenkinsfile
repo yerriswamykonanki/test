@@ -12,8 +12,8 @@ node {
 	
 
 	stage ('Docker Compose') {
-		sh "sleep 60s"
-  }
+		sh 'env >Jenkins_env'
+	}
 	
 	//Deploying/Downloading Artifacts to Artifactory and Build Promotions
 	stage ('Deploy Artifacts') {
