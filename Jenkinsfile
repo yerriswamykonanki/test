@@ -1,26 +1,15 @@
-node {
-
-	//Git Checkout
-	stage ('Checkout') {
-		checkout scm
-	}
-
-	//Build and SonarQube Analysis
-	stage ('Build') {
-		sh "echo ${BRANCH_NAME}"
-	}
-	
-
-	stage ('Docker Compose') {
-		sh 'env >Jenkins_env'
-	}
-	
-	//Deploying/Downloading Artifacts to Artifactory and Build Promotions
-	stage ('Deploy Artifacts') {
-	
-		}
-	
-	stage ('Email Notifications') {
-		//notifySuccessful()
-	}
+node{
+    stage('git'){
+       sh 'echo HII'
+       sh' echo $WORKSPACE'
+		notifySuccessful()
+    }
 }
+def notifySuccessful(){
+emailext (
+	attachLog: true, attachmentsPattern: '*.html, output.xml', body: '''<span style=\'line-height: 22px; font-family: Candara; padding: 10.5px; font-size: 15px; word-break: break-all; word-wrap: break-word; \'>
+	<p><br><br>${JELLY_SCRIPT, template="swamy2"}</p>
+	</span>''', subject: '$DEFAULT_SUBJECT', to: 'yerriswamy.konanki@ggktech.com'
+	)
+}
+
